@@ -1,0 +1,9 @@
+type Card {
+    id: ID!
+    front: String!
+    back: String!
+}
+
+type Query {
+    cards: [Card]!
+}
