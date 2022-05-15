@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev ./src/index.ts",
     "start": "node build/src/index.js",
-    "codegen": "graphql-codegen --config codegen.yaml"
+    "codegen": "graphql-codegen --config codegen.yaml",
+    "clean": "rm -rf .turbo node_modules"
   },
   "dependencies": {
     "@graphql-tools/graphql-file-loader": "7.3.11",

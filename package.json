@@ -11,7 +11,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
@@ -22,6 +23,5 @@
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
-  },
-  "packageManager": "npm@8.7.0"
+  }
 }
