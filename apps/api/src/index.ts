@@ -3,7 +3,7 @@ import { loadSchemaSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { addResolversToSchema } from "@graphql-tools/schema";
 import { ApolloServer } from "apollo-server";
-import { Card, Resolvers } from "./types";
+import { Card, Resolvers } from "./types/__generated__/graphql";
 
 const cards: Card[] = [
   {
@@ -28,7 +28,7 @@ const cards: Card[] = [
   },
 ];
 
-const schema = loadSchemaSync(join(__dirname, "./graphql/schema.graphql"), {
+const schema = loadSchemaSync(join(__dirname, "./schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
 });
 

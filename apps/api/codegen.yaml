@@ -1,9 +1,9 @@
 overwrite: true
 generates:
-  ./src/types/graphql.ts:
+  ./src/types/__generated__/graphql.ts:
     plugins:
       - typescript
       - typescript-resolvers
-    schema: ./src/graphql/schema.graphql
+    schema: ./src/schema.graphql
     config:
       useIndexSignature: true
