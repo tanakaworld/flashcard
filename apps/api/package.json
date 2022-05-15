@@ -5,14 +5,23 @@
   "types": "./src/types/__generated__/graphql.ts",
   "scripts": {
     "dev": "ts-node-dev ./src/index.ts",
+    "db:local": "docker-compose up",
+    "db:seed": "prisma db seed",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:studio": "prisma studio --schema=./src/prisma/schema.prisma",
     "start": "node build/src/index.js",
     "codegen": "graphql-codegen --config codegen.yaml",
     "clean": "rm -rf .turbo node_modules"
+  },
+  "prisma": {
+    "schema": "src/db/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} src/db/seed.ts"
   },
   "dependencies": {
     "@graphql-tools/graphql-file-loader": "7.3.11",
     "@graphql-tools/load": "7.5.10",
     "@graphql-tools/schema": "8.3.10",
+    "@prisma/client": "^3.14.0",
     "apollo-server": "3.6.7",
     "graphql": "16.3.0",
     "prisma": "3.14.0"

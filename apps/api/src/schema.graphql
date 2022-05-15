@@ -1,9 +1,22 @@
 type Card {
-    id: ID!
+    id: Int!
     front: String!
     back: String!
+    createdAt: Date!
+    updatedAt: Date!
 }
 
 type Query {
     cards: [Card]!
 }
+
+type Mutation {
+    createCard(input: CreateCardInput!): Card
+}
+
+input CreateCardInput {
+    front: String!
+    back: String!
+}
+
+scalar Date
