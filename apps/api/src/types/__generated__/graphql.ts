@@ -23,6 +23,21 @@ export type Card = {
   updatedAt: Scalars['Date'];
 };
 
+export type CreateCardInput = {
+  back: Scalars['String'];
+  front: Scalars['String'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createCard: Card;
+};
+
+
+export type MutationCreateCardArgs = {
+  input?: InputMaybe<CreateCardInput>;
+};
+
 export type Query = {
   __typename?: 'Query';
   cards: Array<Maybe<Card>>;
@@ -100,8 +115,10 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = ResolversObject<{
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Card: ResolverTypeWrapper<Card>;
+  CreateCardInput: CreateCardInput;
   Date: ResolverTypeWrapper<Scalars['Date']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
 }>;
@@ -110,8 +127,10 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Boolean: Scalars['Boolean'];
   Card: Card;
+  CreateCardInput: CreateCardInput;
   Date: Scalars['Date'];
   Int: Scalars['Int'];
+  Mutation: {};
   Query: {};
   String: Scalars['String'];
 }>;
@@ -129,6 +148,10 @@ export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes
   name: 'Date';
 }
 
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = ResolversObject<{
+  createCard?: Resolver<ResolversTypes['Card'], ParentType, ContextType, Partial<MutationCreateCardArgs>>;
+}>;
+
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
   cards?: Resolver<Array<Maybe<ResolversTypes['Card']>>, ParentType, ContextType>;
 }>;
@@ -136,6 +159,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 export type Resolvers<ContextType = any> = ResolversObject<{
   Card?: CardResolvers<ContextType>;
   Date?: GraphQLScalarType;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 }>;
 
