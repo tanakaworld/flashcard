@@ -15,7 +15,7 @@ export default function Index() {
 
   return (
     <div>
-      <h1>Web</h1>
+      <h1>Admin</h1>
 
       <h2>Cards</h2>
       <CardTable cards={data.cards} />
