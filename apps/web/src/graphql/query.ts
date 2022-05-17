@@ -6,6 +6,8 @@ export const QUERY_CARDS = gql`
       id
       front
       back
+      createdAt
+      updatedAt
     }
   }
 `;

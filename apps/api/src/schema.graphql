@@ -10,13 +10,4 @@ type Query {
     cards: [Card]!
 }
 
-type Mutation {
-    createCard(input: CreateCardInput!): Card
-}
-
-input CreateCardInput {
-    front: String!
-    back: String!
-}
-
 scalar Date
