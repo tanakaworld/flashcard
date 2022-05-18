@@ -1,10 +1,18 @@
 import { Card } from "api";
+import { useQuery } from "@apollo/client";
+import { QUERY_CARDS } from "~/graphql/query";
 
-type Props = {
-  cards: Card[];
-};
+export default function CardTable() {
+  const { data, loading, error } = useQuery<{ cards: Card[] }>(QUERY_CARDS);
 
-export default function CardTable({ cards }: Props) {
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Failed to load</p>;
+  }
+
   return (
     <table>
       <thead>
@@ -17,15 +25,16 @@ export default function CardTable({ cards }: Props) {
         </tr>
       </thead>
       <tbody>
-        {cards.map(({ id, front, back, createdAt, updatedAt }) => (
-          <tr key={id}>
-            <td>{id}</td>
-            <td>{front}</td>
-            <td>{back}</td>
-            <td>{createdAt}</td>
-            <td>{updatedAt}</td>
-          </tr>
-        ))}
+        {data &&
+          data.cards.map(({ id, front, back, createdAt, updatedAt }) => (
+            <tr key={id}>
+              <td>{id}</td>
+              <td>{front}</td>
+              <td>{back}</td>
+              <td>{createdAt}</td>
+              <td>{updatedAt}</td>
+            </tr>
+          ))}
       </tbody>
     </table>
   );
