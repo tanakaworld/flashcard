@@ -18,6 +18,12 @@
       ],
       "outputs": [".next/**"]
     },
+    "api#build": {
+      "dependsOn": [
+        "^build",
+        "$DATABASE_URL"
+      ]
+    },
     "lint": {
       "outputs": []
     },
