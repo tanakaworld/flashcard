@@ -11,7 +11,7 @@ type Query {
 }
 
 type Mutation {
-    createCard(input: CreateCardInput): Card!
+    createCard(input: CreateCardInput!): Card!
 }
 
 input CreateCardInput {
