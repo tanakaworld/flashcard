@@ -8,7 +8,10 @@
       "~/*": ["src/*"]
     },
     "incremental": false,
-    "outDir": "build"
+    "outDir": "build",
+    "plugins": [
+      { "transform": "typescript-transform-paths", "afterDeclarations": true },
+    ]
   },
   "ts-node": {
     "transpileOnly": true,

@@ -10,8 +10,8 @@
     "db:migrate:dev": "prisma migrate dev",
     "db:migrate:prod": "prisma migrate deploy",
     "db:studio": "prisma studio --schema=./src/prisma/schema.prisma",
-    "build": "tsc",
-    "start": "node build/src/index.js",
+    "build": "rm -rf build/ && tsc && tsc-alias && cp src/schema.graphql build/",
+    "start": "node build/index.js",
     "codegen": "graphql-codegen --config codegen.yaml",
     "clean": "rm -rf .turbo node_modules"
   },
@@ -35,6 +35,7 @@
     "@graphql-codegen/typescript-resolvers": "2.6.1",
     "nodemon": "2.0.16",
     "ts-node": "10.7.0",
+    "tsc-alias": "1.6.7",
     "tsconfig": "*",
     "typescript-transform-paths": "3.3.1"
   }
