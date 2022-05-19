@@ -4,7 +4,7 @@
   "private": true,
   "types": "./src/types/__generated__/graphql.ts",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts",
+    "dev": "nodemon",
     "db:local": "docker-compose up",
     "db:seed": "prisma db seed",
     "db:migrate:dev": "prisma migrate dev",
@@ -33,7 +33,9 @@
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/typescript": "2.4.8",
     "@graphql-codegen/typescript-resolvers": "2.6.1",
+    "nodemon": "2.0.16",
     "ts-node": "10.7.0",
-    "ts-node-dev": "1.1.8"
+    "tsconfig": "*",
+    "typescript-transform-paths": "3.3.1"
   }
 }
