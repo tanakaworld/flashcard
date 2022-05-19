@@ -13,7 +13,8 @@
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "turbo run clean && rm -rf node_modules",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "heroku-postbuild": "turbo run build --filter=api"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
