@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { Card } from "../types/__generated__/graphql";
+import { Card } from "~/types/__generated__/graphql";
 
 const prisma = new PrismaClient();
 
