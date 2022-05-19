@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const MUTATION_CREATE_CARD = gql`
-  mutation CreateCard($input: CreateCardInput) {
+  mutation CreateCard($input: CreateCardInput!) {
     createCard(input: $input) {
       id
       front
