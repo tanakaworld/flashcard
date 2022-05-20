@@ -1,0 +1,44 @@
+.CardListMenuButton {
+  background: none;
+  border-radius: 0;
+  border: 0;
+  border-bottom: solid 1px var(--primary);
+  width: 100%;
+  height: 36px;
+  position: fixed;
+  top: 0;
+  cursor: pointer;
+  padding: 0;
+  font-size: larger;
+}
+
+.CardListMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  z-index: var(--z-index-fixed);
+  background-color: var(--secondary);
+  border-bottom: solid 1px var(--primary);
+  position: fixed;
+  top: 36px;
+  padding: var(--space-content);
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+.CardListFooter {
+  position: fixed;
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 8px;
+}
+
+.CardListSubContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
+}
