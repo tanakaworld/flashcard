@@ -7,17 +7,20 @@ import { ApolloServer } from "apollo-server";
 import { getAllowOrigins } from "~/utils/cors";
 import resolvers from "./resolvers";
 
-const schema = loadSchemaSync(join(__dirname, "./schema.graphql"), {
-  loaders: [new GraphQLFileLoader()],
-});
+async function main() {
+  const schema = loadSchemaSync(join(__dirname, "./schema.graphql"), {
+    loaders: [new GraphQLFileLoader()],
+  });
 
-const server = new ApolloServer({
-  schema: addResolversToSchema({ schema, resolvers }),
-  cors: {
-    origin: getAllowOrigins(),
-  },
-});
+  const server = new ApolloServer({
+    schema: addResolversToSchema({ schema, resolvers }),
+    cors: {
+      origin: getAllowOrigins(),
+    },
+  });
 
-server.listen({ port: 4000 }).then(({ url }) => {
-  console.log(`🚀 Server is ready at ${url}`);
-});
+  const { url } = await server.listen({ port: process.env.PORT || 4000 });
+  console.log(`🚀 Server is running at ${url}`);
+}
+
+main();
