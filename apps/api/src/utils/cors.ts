@@ -1,7 +1,9 @@
 import { ApolloServer } from "apollo-server";
 
 export function getAllowOrigins() {
-  const origin: ApolloServer["cors"]["origin"] = [];
+  const origin: ApolloServer["cors"]["origin"] = [
+    "https://studio.apollographql.com",
+  ];
 
   if (process.env.ORIGIN_NAME_WEB) origin.push(process.env.ORIGIN_NAME_WEB);
   if (process.env.ORIGIN_NAME_ADMIN) origin.push(process.env.ORIGIN_NAME_ADMIN);
