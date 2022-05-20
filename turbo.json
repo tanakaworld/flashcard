@@ -21,7 +21,9 @@
     "api#build": {
       "dependsOn": [
         "^build",
-        "$DATABASE_URL"
+        "$DATABASE_URL",
+        "$ORIGIN_NAME_WEB",
+        "$ORIGIN_NAME_ADMIN"
       ]
     },
     "lint": {
