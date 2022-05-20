@@ -1,5 +1,5 @@
-import CardTable from "~/components/card-table";
-import CardForm from "~/components/card-form";
+import CardTable from "~/components/CardTable";
+import CardForm from "~/components/CardForm";
 
 export default function Index() {
   return (
