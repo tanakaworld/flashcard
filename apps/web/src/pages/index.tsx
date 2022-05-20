@@ -1,4 +1,4 @@
-import CardTable from "~/components/card-table";
+import CardTable from "~/components/CardTable";
 
 export default function Index() {
   return (
