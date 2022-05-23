@@ -1,15 +1,7 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
+const base = require("jest-internal/jest.config");
 
 module.exports = {
-  clearMocks: true,
-  testEnvironment: "jsdom",
-  testMatch: ["**/__tests__/**/*.test.ts"],
-  transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
-  },
+  ...base,
   moduleNameMapper: {
     "~/(.*)": "<rootDir>/src/$1",
   },
