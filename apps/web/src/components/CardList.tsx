@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "ui";
 import { Card as CardType } from "api";
 import Card from "~/components/Card";
-import styles from "~/components/CardList.module.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "~/graphql/query";
 import styled from "@emotion/styled";
