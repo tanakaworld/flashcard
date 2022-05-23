@@ -35,6 +35,9 @@
     "test": {
       "outputs": []
     },
+    "test:integration": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
     },

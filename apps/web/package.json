@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix .",
     "clean": "rm -rf .turbo .next node_modules",
     "test": "jest",
+    "test:integration": "npm run build && start-test start http://localhost:3000 cypress:ci",
     "test:integration:open": "npm run build && start-test start http://localhost:3000 cypress:open",
     "cypress:open": "cypress open",
     "cypress:ci": "cypress run",
