@@ -1,0 +1,17 @@
+{
+  "name": "jest-internal",
+  "version": "0.0.0",
+  "main": "index.js",
+  "files": [
+    "jest.config.js",
+    "setupFiles/jsdom.ts"
+  ],
+  "dependencies": {
+    "@types/jest": "27.5.1",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "12.1.5",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
+    "ts-jest": "28.0.2"
+  }
+}
