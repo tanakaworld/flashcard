@@ -14,7 +14,8 @@
     "build": "rm -rf build/ && tsc && tsc-alias && cp src/schema.graphql build/",
     "start": "node build/index.js",
     "codegen": "graphql-codegen --config codegen.yaml",
-    "clean": "rm -rf .turbo node_modules"
+    "clean": "rm -rf .turbo node_modules",
+    "test": "jest"
   },
   "prisma": {
     "schema": "src/db/schema.prisma",
@@ -34,7 +35,10 @@
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/typescript": "2.4.8",
     "@graphql-codegen/typescript-resolvers": "2.6.1",
+    "@types/jest": "27.5.1",
+    "jest": "28.1.0",
     "nodemon": "2.0.16",
+    "ts-jest": "28.0.2",
     "ts-node": "10.7.0",
     "tsc-alias": "1.6.7",
     "tsconfig": "*",
