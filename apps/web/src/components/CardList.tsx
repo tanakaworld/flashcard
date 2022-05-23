@@ -57,6 +57,16 @@ export default function CardList() {
     await refetch();
   };
 
+  if (cards.length === 0 || !card) {
+    return (
+      <>
+        <h2>No cards 🤷</h2>
+
+        <Button onClick={handleReload}>Reload</Button>
+      </>
+    );
+  }
+
   return (
     <>
       <SCardFooter>
@@ -68,20 +78,12 @@ export default function CardList() {
           👉
         </Button>
       </SCardFooter>
-      {card ? (
-        <>
-          <Card card={card} isFront={isFront} />
-          <SCardListSubContent>
-            {index + 1} / {cards.length}
-          </SCardListSubContent>
-        </>
-      ) : (
-        <>
-          <h2>No cards 🤷</h2>
-
-          <Button onClick={handleReload}>Reload</Button>
-        </>
-      )}
+      <>
+        <Card card={card} isFront={isFront} />
+        <SCardListSubContent>
+          {index + 1} / {cards.length}
+        </SCardListSubContent>
+      </>
     </>
   );
 }
