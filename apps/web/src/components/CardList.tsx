@@ -5,6 +5,23 @@ import Card from "~/components/Card";
 import styles from "~/components/CardList.module.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_CARDS } from "~/graphql/query";
+import styled from "@emotion/styled";
+
+const SCardFooter = styled.div`
+  position: fixed;
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 8px;
+`;
+
+const SCardListSubContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
+`;
 
 export default function CardList() {
   const [index, setIndex] = useState(0);
@@ -43,7 +60,7 @@ export default function CardList() {
 
   return (
     <>
-      <div className={styles.CardListFooter}>
+      <SCardFooter>
         <Button onClick={handlePrev} disabled={!hasPrev}>
           👈
         </Button>
@@ -51,13 +68,13 @@ export default function CardList() {
         <Button onClick={handleNext} disabled={!hasNext}>
           👉
         </Button>
-      </div>
+      </SCardFooter>
       {card ? (
         <>
           <Card card={card} isFront={isFront} />
-          <div className={styles.CardListSubContent}>
+          <SCardListSubContent>
             {index + 1} / {cards.length}
-          </div>
+          </SCardListSubContent>
         </>
       ) : (
         <>

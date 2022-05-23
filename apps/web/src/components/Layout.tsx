@@ -1,10 +1,14 @@
 import Head from "next/head";
-import styles from "~/components/Layout.module.css";
+import styled from "@emotion/styled";
 
 type LayoutProps = {
   children: JSX.Element | JSX.Element[] | string | number;
   title: string;
 };
+
+const SMain = styled.main`
+  padding: 2rem;
+`;
 
 export default function Layout({ children, title }: LayoutProps) {
   return (
@@ -14,7 +18,7 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta name="robots" content="noindex" />
       </Head>
 
-      <main className={styles.Main}>{children}</main>
+      <SMain>{children}</SMain>
     </>
   );
 }
