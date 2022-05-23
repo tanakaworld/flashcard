@@ -1,6 +1,7 @@
+import * as React from "react";
 import styles from "@emotion/styled";
 
-type Props = {
+type Props = React.ComponentProps<"table"> & {
   columns: string[];
   data: (string | number | (() => string | number))[][];
 };
@@ -21,9 +22,9 @@ const STd = styles.td`
 `;
 
 // FIXME avoid using index as key
-export const Table = ({ columns, data }: Props) => {
+export const Table = ({ columns, data, ...rest }: Props) => {
   return (
-    <STable>
+    <STable {...rest}>
       <thead>
         <tr>
           {columns.map((c, index) => {
