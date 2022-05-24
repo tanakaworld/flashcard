@@ -12,7 +12,8 @@
     "test": "jest",
     "test:integration:open": "npm run build && start-test start http://localhost:3000 cypress:open",
     "cypress:open": "cypress open",
-    "cypress:ci": "cypress run"
+    "cypress:ci": "cypress run",
+    "setup": "cp .env.example .env"
   },
   "dependencies": {
     "@apollo/client": "3.5.10",

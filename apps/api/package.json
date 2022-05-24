@@ -15,7 +15,8 @@
     "start": "node build/index.js",
     "codegen": "graphql-codegen --config codegen.yaml",
     "clean": "rm -rf .turbo node_modules",
-    "test": "jest"
+    "test": "jest",
+    "setup": "cp .env.example .env"
   },
   "prisma": {
     "schema": "src/db/schema.prisma",

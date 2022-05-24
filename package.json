@@ -15,7 +15,8 @@
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
     "prepare": "husky install",
-    "heroku-postbuild": "turbo run build --filter=api"
+    "heroku-postbuild": "turbo run build --filter=api",
+    "setup": "turbo run setup"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
