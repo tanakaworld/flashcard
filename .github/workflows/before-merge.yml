@@ -3,7 +3,7 @@ name: Before Merge
 on:
   push:
     branches-ignore:
-      - master
+      - main
 
 # TODO split jobs into build and test
 jobs:
