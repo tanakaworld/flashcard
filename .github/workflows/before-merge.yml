@@ -5,18 +5,20 @@ on:
     branches-ignore:
       - master
 
+# TODO split jobs into build and test
 jobs:
   build:
     name: Build and Test
     timeout-minutes: 15
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     # To use Remote Caching, uncomment the next lines and follow the steps below.
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        # TODO add firefox and edige
+        browser: [ chrome ]
 
     steps:
       - name: Check out code
@@ -39,8 +41,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Setup environment variables
+        run: npm run setup
+
       - name: Build
         run: npm run build
 
-      - name: Test
-        run: npm run test
+      - name: Unit Tests
+        run: npm test
+
+      - name: Integration Tests
+        uses: cypress-io/github-action@v2
+        with:
+          browser: ${{ matrix.browser }}
+          command: npm run test:integration
+
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-${{ matrix.browser }}
+          path: |
+            cypress/videos
+            cypress/screenshots

@@ -13,6 +13,7 @@
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
+    "test:integration": "turbo run test:integration",
     "clean": "turbo run clean && rm -rf node_modules",
     "prepare": "husky install",
     "heroku-postbuild": "turbo run build --filter=api",
