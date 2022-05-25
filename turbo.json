@@ -24,7 +24,8 @@
         "$DATABASE_URL",
         "$ORIGIN_NAME_WEB",
         "$ORIGIN_NAME_ADMIN"
-      ]
+      ],
+      "outputs": ["build/**"]
     },
     "lint": {
       "outputs": []
