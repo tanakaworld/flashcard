@@ -28,7 +28,7 @@ $ npm ci
 $ npm run setup
 ```
 
-Initialize database for `api`:
+Initialize database for `apps/api`:
 
 ```bash
 $ npm run db:local -w=api
@@ -47,7 +47,7 @@ Run dev:
 $ npm run dev
 ```
 
-## Generating types for `api`
+## Generating types for `apps/api`
 
 ```bash
 $ npm run codegen -w=api
