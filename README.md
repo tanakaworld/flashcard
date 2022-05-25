@@ -55,6 +55,18 @@ $ npm run codegen -w=api
 
 ## Testing
 
+Unit testing:
+
 ```bash
 $ npm test
+```
+
+Integration testing:
+
+```bash
+$ npm run test:integration
+
+# Also it is available to run the tests against development server using Cypress' GUI
+$ npm run dev
+$ npm run cypress:open -w=web
 ```

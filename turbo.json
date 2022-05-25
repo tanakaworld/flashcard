@@ -39,6 +39,10 @@
     "test:integration": {
       "outputs": []
     },
+    "web#test:integration": {
+      "dependsOn": ["web#build"],
+      "outputs": []
+    },
     "dev": {
       "cache": false
     },
