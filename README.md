@@ -70,3 +70,9 @@ $ npm run test:integration
 $ npm run dev
 $ npm run cypress:open -w=web
 ```
+
+## TODOs
+
+- [] Authn / Authz
+- [] Renovate
+- [] E2E testing
