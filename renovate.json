@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "config:js-app",
+    ":label(Renovate)",
+    "group:recommended",
+    "group:nextjsMonorepo"
+  ],
+  "schedule": ["before 1pm"],
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["patch"],
+      "groupName": "all patch dependencies",
+      "paths": ["package.json"]
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["minor"],
+      "groupName": "all minor dependencies",
+      "paths": ["package.json"]
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["patch"],
+      "groupName": "all patch devDependencies",
+      "paths": ["package.json"]
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["minor"],
+      "groupName": "all minor devDependencies",
+      "paths": ["package.json"]
+    }
+  ],
+  "transitiveRemediation": true,
+  "dependencyDashboard": true,
+  "lockFileMaintenance": {
+    "enabled": true
+  }
+}
