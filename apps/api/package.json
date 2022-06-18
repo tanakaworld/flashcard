@@ -34,10 +34,10 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.6.2",
-    "@graphql-codegen/typescript": "2.4.8",
+    "@graphql-codegen/typescript": "2.5.1",
     "@graphql-codegen/typescript-resolvers": "2.6.6",
     "nodemon": "2.0.16",
-    "ts-node": "10.7.0",
+    "ts-node": "10.8.1",
     "tsc-alias": "1.6.11",
     "jest-internal": "*",
     "tsconfig": "*",
