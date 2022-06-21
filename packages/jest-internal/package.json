@@ -7,15 +7,13 @@
     "setupFiles/jest-fetch-mock.ts",
     "setupFiles/jsdom.ts"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.5.2",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
+    "jest-fetch-mock": "3.0.3",
     "ts-jest": "28.0.5"
-  },
-  "devDependencies": {
-    "jest-fetch-mock": "3.0.3"
   }
 }
