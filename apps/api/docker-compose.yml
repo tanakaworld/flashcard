@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mariadb:10.8
+    image: mariadb:10.11
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     ports:
       - "3308:3306"
