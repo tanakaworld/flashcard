@@ -16,9 +16,9 @@
     "setup": "cp .env.example .env"
   },
   "dependencies": {
-    "@apollo/client": "3.6.9",
-    "graphql": "16.5.0",
-    "next": "12.1.6",
+    "@apollo/client": "3.7.17",
+    "graphql": "16.7.1",
+    "next": "12.3.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ui": "*"
