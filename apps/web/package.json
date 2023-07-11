@@ -39,7 +39,7 @@
     "jest-internal": "*",
     "ts-loader": "9.3.1",
     "tsconfig": "*",
-    "tsconfig-paths-webpack-plugin": "3.5.2",
+    "tsconfig-paths-webpack-plugin": "4.1.0",
     "typescript": "4.7.4"
   }
 }
