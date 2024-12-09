@@ -36,7 +36,7 @@
     "@graphql-codegen/cli": "2.6.4",
     "@graphql-codegen/typescript": "2.5.1",
     "@graphql-codegen/typescript-resolvers": "2.6.6",
-    "nodemon": "2.0.20",
+    "nodemon": "2.0.22",
     "ts-node": "10.8.2",
     "tsc-alias": "1.6.11",
     "jest-internal": "*",
